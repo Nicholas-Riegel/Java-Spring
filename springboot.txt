@@ -1,0 +1,17 @@
+TO START NEW PROJECT IN VJCODE
+1. cmd shift p
+2. Spring Initializer: Create a Maven project
+3. select all obvious options
+4. choose Spring Web dependency
+and Spring dev tools
+or
+to allow auto updates add to pom file:
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-devtools</artifactId>
+    <optional>true</optional>
+</dependency>
+5. run
+mvn spring-boot:run
+6. server will be running on port 8080
+
