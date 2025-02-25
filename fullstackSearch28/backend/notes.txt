@@ -1,0 +1,3 @@
+1. to check the db:
+localhost:8080/h2-console
+(by default, if no username is set, the username is sa)
