@@ -1,6 +1,7 @@
 package com.example.backend25.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -114,6 +115,14 @@ public class ProductController {
             productService.deleteProduct(id);
             return new ResponseEntity<>("Product deleted", HttpStatus.OK);
         }
+    }
+
+    // SEARCH
+    @GetMapping("/products/search")
+    public ResponseEntity<List<Product>> searchProducts(@RequestParam String keyword) {
+        System.out.println("Searching with keyword: " + keyword);
+        List<Product> products = productService.searchProducts(keyword);
+        return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
 }
